@@ -1,0 +1,72 @@
+
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f0f0f0;
+}
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+        
+       
+form > * {
+    margin-right: 10px; 
+}
+form > *:last-child {
+    margin-right: 0;
+} 
+        
+input[type="text"],
+input[type="number"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px; 
+    margin-bottom: 10px;
+    vertical-align: middle;
+}
+.button-container {
+    display: flex;
+    justify-content: center;}
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    align-self: center;
+    margin-bottom: 10px;
+}
+
+img {
+    display: block; /* Ensures margin:auto works */
+    margin: 0 auto; /* Centers the image */
+    width: 500px; 
+    height: auto; 
+    }
+#summary p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    padding: 5px;
+    font-size: 20px;
+    }
+
+  
