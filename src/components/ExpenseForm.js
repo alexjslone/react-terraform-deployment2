@@ -9,7 +9,34 @@ function ExpenseForm({ addExpense }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        addExpense({ itemName, category, price: parseFloat(price) });
+       // addExpense({ itemName, category, price: parseFloat(price) });
+       /*
+            Basically this is setting it up 
+       */
+
+        const expense = { itemName, category, price: parseFloat(price) };
+    async function handleSubmit(values)
+        try {
+            const apiUrl = 'https://YOUR_API_GATEWAY_URL/test'; // Replace with your actual API Gateway URL
+            const response = await fetch(apiUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(expense),
+            });
+        
+            if (response.ok) {
+                const data = await response.json();
+                // Update the expense with the total in USD
+                addExpense({ ...expense, totalInUSD: data.totalInUSD });
+            } else {
+                console.error('Error calculating total.');
+            }
+        } catch (error) {
+            console.error('An error occurred:', error);
+        }
+        
         setItemName('');
         setCategory('');
         setPrice('');
