@@ -9,13 +9,10 @@ function ExpenseForm({ addExpense }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        addExpense({ itemName, category, price: parseFloat(price) });
-           // Basically this is setting it up 
-       
-
+        //addExpense({ itemName, category, price: parseFloat(price) });
         const expense = { itemName, category, price: parseFloat(price) };
         try {
-            const apiUrl = 'http://localhost:3001/expenses'; // Replace with your actual API Gateway URL
+            const apiUrl = 'https://9bzv0wat3i.execute-api.us-west-1.amazonaws.com'; // this is the server i created 
             const response = fetch(apiUrl, {
                 method: 'POST',
                 headers: {
